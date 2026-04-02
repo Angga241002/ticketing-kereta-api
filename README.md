@@ -1,18 +1,35 @@
-## Getting Started
+# Sistem Penjualan Tiket Kereta Api (Java OOP)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Deskripsi
+Aplikasi ini merupakan simulasi pemesanan tiket kereta api berbasis Java dengan menerapkan konsep Object Oriented Programming (OOP).
 
-## Folder Structure
+## Konsep OOP yang Digunakan
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+- Interface
 
-The workspace contains two folders by default, where:
+## Struktur Class
+- Ticket (Abstract Class)
+- EconomyTicket & BusinessTicket (Inheritance)
+- PaymentInterface
+- CreditCardPayment & EWalletPayment
+- Booking
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Cara Menjalankan
+1. Compile program:
+   javac *.java
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. Jalankan program:
+   java Main
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Contoh Output
+=== Detail Booking ===
+Kereta : KA Argo Bromo
+Jenis  : Ekonomi
+Harga  : Rp 150000
+Pembayaran Rp 150000 dengan E-Wallet
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Author
+Angga Pratama
