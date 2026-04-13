@@ -18,13 +18,25 @@ public class Main {
         }
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Pilih nomor kereta: ");
-        int pilihan = input.nextInt();
+        Ticket tiketDipilih = null;
+         try {
+            System.out.print("Pilih nomor kereta: ");
+            int pilihan = input.nextInt();
 
-        Ticket tiketDipilih = daftarKereta.get(pilihan - 1);
+            tiketDipilih = daftarKereta.get(pilihan - 1);
 
-        PaymentInterface payment = new EWalletPayment();
-        Booking booking = new Booking(tiketDipilih, payment);
-        booking.processBooking();
+        } catch (InputMismatchException e) {
+            System.out.println("Input harus berupa angka!");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Pilihan tidak tersedia!");
+        }
+
+        if (tiketDipilih != null) {
+            PaymentInterface payment = new EWalletPayment();
+            Booking booking = new Booking(tiketDipilih, payment);
+            booking.processBooking();
+        } else {
+            System.out.println("Booking gagal.");
+        }
     }
 }
